@@ -1,7 +1,9 @@
+import {Link} from "react-router-dom"
+import "../App.css"
 const CartWidget=()=>{
     return(
         <>
-        <span class="material-symbols-outlined">shopping_cart</span>
+        <Link to="/cart"><span class="material-symbols-outlined white">shopping_cart</span></Link>
         </>
     )
 }
