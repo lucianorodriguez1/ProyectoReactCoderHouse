@@ -6,6 +6,7 @@ const CartContextProvider = ({children})=>{
 
 
     const [cartList, setCartList] =useState([])
+    console.log(cartList)
 
 
     const addToCart = (item, qty) => {
@@ -18,7 +19,7 @@ const CartContextProvider = ({children})=>{
                     imgItem: item.imagen,
                     nombreItem: item.nombre,
                     precioItem: item.precio,
-                    qtyItem: qty
+                    qtyItem: qty,
                 }
             ]);
         } else {
@@ -41,16 +42,6 @@ const CartContextProvider = ({children})=>{
         return cartList[index].costItem * cartList[index].qtyItem;
     }
 
-    const calcSubTotal = () => {
-        let totalPerItem = cartList.map(item => calcTotalPorItem(item.idItem));
-        return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);
-    }
-
-
-    const calcTotal = () => {
-        return calcSubTotal();
-    }
-
 
     const calcItemsQty = () => {
         let qtys = cartList.map(item => item.qtyItem);
@@ -64,8 +55,6 @@ const CartContextProvider = ({children})=>{
             removeList, 
             deleteItem,
             calcTotalPorItem, 
-            calcSubTotal, 
-            calcTotal,
             calcItemsQty,
             }}>
             {children}

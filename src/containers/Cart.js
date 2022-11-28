@@ -35,6 +35,9 @@ const Cart = () =>{
                             <p>{item.qtyItem} unidades</p>
                             <button className="borrar-producto" onClick={() => test.deleteItem(item.idItem)}>Borrar</button>
                         </div>
+                        <div>
+                            <p> Total por producto: $ {test.calcTotalPorItem(item.idItem)}</p>
+                        </div>
                         
                     </div>
                     )
