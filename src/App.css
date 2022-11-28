@@ -83,30 +83,45 @@
 
 .item-detail{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
+}
+.item-detail img{
+    width: 400px;
+    display: inline;
+}
+.item-detail-contenedor{
+    margin: 0 20px;
 }
 
 /* item count */
 .button-container{
 margin-top: 40px;
 }
+.contador{
+    font-size: 25px;
+}
 
 .button-increment{
-    font-size: 10px;
+    font-size: 30px;
     padding: 10px;
     margin: 0 10px;
-    background-color: orange;
-    color: white;
+    color: black;
     border: none;
+    cursor: pointer;
+    background-color: inherit;
 }
+
 .button-decrement{
-    font-size: 10px;
+    font-size: 30px;
     padding: 10px;
     margin:0 10px;
-    background-color: orange;
-    color: white;
+    background-color: inherit;
+    color: black;
     border: none;
-    
+    cursor: pointer;
 }
 
 .button-add{
@@ -114,6 +129,10 @@ margin-top: 40px;
     color: white;
     padding: 10px;
     border: none;
+    cursor: pointer;
+}
+.button-add-disabled{
+    padding: 10px;
 }
 .button-checkout{
     margin: 10px 0;
@@ -121,8 +140,68 @@ margin-top: 40px;
     background-color: red;
     color: bisque;
     border: none;
+    cursor: pointer;
 }
 /* cart widget */
 .white{
     color:white;
+}
+/* cart */
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+.titulo-carrito{
+    text-align: center;
+    margin-top:20px;
+}
+.continua-comprando{
+    padding: 7px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 5px;
+}
+.continua-comprando a{
+    text-decoration: none;
+    color:white;
+}
+
+.producto-en-carrito{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.producto-en-carrito img{
+    width: 200px;
+}
+
+
+.descripcion-en-carrito{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.precio-en-carrito{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 20px;
+}
+.borrar-todo{
+    padding: 7px;
+    background-color: red;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+
+}
+.borrar-producto{
+    padding: 7px;
+    background-color: red;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 0 20px;
 }

@@ -12,7 +12,7 @@ const ItemDetail= ({item}) =>{
 
 
     const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
+        alert("Has seleccionado " + qty + " productos.");
         setItemCount(qty);
         addToCart(item);
     }
@@ -21,16 +21,16 @@ const ItemDetail= ({item}) =>{
         <div>
             <div className="item-detail">
                 <img src={item.imagen}/>
-                <div>
+                <div className="item-detail-contenedor">
                     <h3>{item.nombre}</h3>
                     <p>{item.descripcion}</p>
-                    <p>{item.precio}</p>
+                    <p>$ {item.precio}</p>
                     <p>Hay {item.stock} artículos disponibles</p>
 
                     {
                         itemCount === 0
                         ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
-                        : <Link to='/cart'><button className="button-checkout">CheckOut</button></Link>
+                        : <Link to='/cart'><button className="button-checkout">Verificar</button></Link>
                     }
 
                 </div>

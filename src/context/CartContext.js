@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext()
 
-const CartContextProvider = (props)=>{
+const CartContextProvider = ({children})=>{
 
 
     const [cartList, setCartList] =useState([])
@@ -16,8 +16,8 @@ const CartContextProvider = (props)=>{
                 {
                     idItem: item.id,
                     imgItem: item.imagen,
-                    nameItem: item.nombre,
-                    costItem: item.precio,
+                    nombreItem: item.nombre,
+                    precioItem: item.precio,
                     qtyItem: qty
                 }
             ]);
@@ -36,9 +36,39 @@ const CartContextProvider = (props)=>{
         setCartList(result);
     }
 
+    const calcTotalPorItem = (idItem) => {
+        let index = cartList.map (item => item.idItem).indexOf(idItem);
+        return cartList[index].costItem * cartList[index].qtyItem;
+    }
+
+    const calcSubTotal = () => {
+        let totalPerItem = cartList.map(item => calcTotalPorItem(item.idItem));
+        return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);
+    }
+
+
+    const calcTotal = () => {
+        return calcSubTotal();
+    }
+
+
+    const calcItemsQty = () => {
+        let qtys = cartList.map(item => item.qtyItem);
+        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+    }
+
     return(
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem}}>
-            {props.children}
+        <CartContext.Provider value={{
+            cartList, 
+            addToCart, 
+            removeList, 
+            deleteItem,
+            calcTotalPorItem, 
+            calcSubTotal, 
+            calcTotal,
+            calcItemsQty,
+            }}>
+            {children}
         </CartContext.Provider>
     )
 }
