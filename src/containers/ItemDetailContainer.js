@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Productos } from "../utils/Productos";
+import { Productos } from "../utils/productos";
 import ItemDetail from "../components/ItemDetail";
-import CustomFetch from "../utils/CustomFetch";
+import customFetch from "../utils/customFetch";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () =>{
@@ -9,7 +9,7 @@ const ItemDetailContainer = () =>{
     const {idItem} = useParams();
 
     useEffect(() =>{
-        CustomFetch(2000, Productos.find(item=>item.id==idItem))
+        customFetch(2000, Productos.find(item=>item.id==idItem))
         .then(result => setDato(result))
         .catch(err => console.log(err))
     },[])
