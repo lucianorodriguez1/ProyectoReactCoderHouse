@@ -25,7 +25,7 @@ export const Productos = [
         categoryId:1,
         category:{
             name:"notebooks",
-            id:1,
+            id:1, 
         }
     },
 
