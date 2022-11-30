@@ -66,11 +66,9 @@
     border-radius: 7px;
     padding: 8px;
     cursor: pointer;
+    width: 100%;
 }
-.producto-container a{
-    color:white;
-    text-decoration: none;
-}
+
 
 
 .productos-container{
@@ -204,4 +202,10 @@ margin-top: 40px;
     border-radius: 7px;
     cursor: pointer;
     margin: 0 20px;
+}
+.precio-total-por-producto{
+    font-size:1.3em;
+}
+.precio-total-por-producto span{
+    font-weight: bold;
 }

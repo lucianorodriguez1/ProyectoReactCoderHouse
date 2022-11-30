@@ -36,7 +36,7 @@ const Cart = () =>{
                             <button className="borrar-producto" onClick={() => test.deleteItem(item.idItem)}>Borrar</button>
                         </div>
                         <div>
-                            <p> Total por producto: $ {test.calcTotalPorItem(item.idItem)}</p>
+                            <p className="precio-total-por-producto"><span >Precio total por producto:</span> $ {test.calcTotalPorItem(item.idItem)}</p>
                         </div>
                         
                     </div>
