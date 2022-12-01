@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import "../App.css"
-import {serverTimestamp} from 'firebase/firestore';
+import {increment, serverTimestamp, updateDoc, doc} from 'firebase/firestore';
 import { createOrderInFirestore } from '../utils/firestoreFetch';
+import {db} from "../utils/firebaseConfig"
 
 
 const Cart = () =>{
@@ -28,7 +29,15 @@ const Cart = () =>{
           
         }
         createOrderInFirestore(order)
-        .then(result => alert('Tu orden ha sido creada con éxito. '))
+        .then(result => 
+            alert('Tu orden ha sido creada con éxito. '),
+            test.cartList.forEach(async(item)=>{
+                const itemRef = doc(db, "productos", item.idItem);
+                await updateDoc(itemRef,{
+                    stock: increment (-item.qtyItem)
+                })
+            })
+        )
         .catch(error => console.log(error))
 
       test.removeList();
