@@ -49,7 +49,7 @@ const CartContextProvider = ({children})=>{
     }
     const calcTotal = () => {
         let totalPorItem = cartList.map(item => calcTotalPorItem(item.idItem));
-        return totalPorItem.reduce((previousValue, currentValue) => previousValue + currentValue);
+        return totalPorItem.reduce((previousValue, currentValue) => previousValue + currentValue,0);
     }
 
     return(
