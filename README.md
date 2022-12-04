@@ -4,7 +4,7 @@ El proyecto es un e-commerce que contiene 9 productos con la funcionalidad de ve
 
 
 
-##Tecnologia usadas
+## Tecnologia usadas
 HTML 
 CSS
 JAVASCRIPT
