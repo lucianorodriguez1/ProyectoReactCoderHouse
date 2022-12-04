@@ -5,10 +5,10 @@ import "../App.css"
 import { CartContext } from "../context/CartContext"
 const CartWidget=()=>{
 
-    const test= useContext(CartContext)
+    const myContext= useContext(CartContext)
     return(
         <>
-        <Badge badgeContent={test.calcItemsQty()} color="primary">
+        <Badge badgeContent={myContext.calcItemsQty()} color="primary">
             <Link to="/cart"><span class="material-symbols-outlined white">shopping_cart</span></Link>
         </Badge>
         </>

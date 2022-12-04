@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { Productos } from "../utils/productos";
 import ItemDetail from "../components/ItemDetail";
-import customFetch from "../utils/customFetch";
 import { useParams } from "react-router-dom";
 import { firestoreFetchOne } from "../utils/firestoreFetch";
 
